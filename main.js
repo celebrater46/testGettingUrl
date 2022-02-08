@@ -8,7 +8,6 @@ const convert_parameter = (p) => {
     if (noQues.indexOf('&') != -1) {
         console.log("noQues: ");
         console.log(noQues);
-        // return noQues.join("&"); // .join is "UNIFY AN ARRAY", Not separate
         return noQues.split("&");
     } else {
         return [noQues];
@@ -22,16 +21,9 @@ const convert_to_html = (ps) => {
     });
 }
 
-// console.log(parameter);
-// console.log(convert_parameter(parameter));
-
 const box = document.getElementById("box");
 
 const ps = convert_parameter(parameter);
 const str = convert_to_html(ps).join();
-// console.log(convert_to_html(ps).join());
-// box.innerHTML = convert_to_html(ps);
-// console.log(str.replace(",", ""));
-// console.log(str.replace(/,/g, ""));
-// box.innerHTML = str.replace(",", "");
+
 box.innerHTML = str.replace(/,/g, "");
